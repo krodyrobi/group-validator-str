@@ -7,7 +7,7 @@ export class CustomValidators {
     const confirmPassword = AC.get('confirmPassword');
 
     if (password.value !== confirmPassword.value) {
-      confirmPassword.setErrors({matchPassword: true});
+      confirmPassword.setErrors(Object.assign({}, confirmPassword.errors, {matchPassword: true}));
       return;
     }
 
